@@ -68,7 +68,6 @@ Nice — here’s a clear, **copy-pasteable step-by-step procedure** to set up *
 sudo apt update && sudo apt install -y wget curl netcat ufw
 ```
 
-5. Optional: create a repo folder locally to hold configs/screenshots: `project-root/{agents,server-setup,dashboards,alerts,reports,docs}`
 
 ---
 
@@ -282,7 +281,7 @@ OR
 | timechart span=1h count
 ```
 
-Use these as starting panels.
+
 
 ---
 
@@ -294,7 +293,7 @@ Use these as starting panels.
 4. Configure visualization type (timechart, table, single value) and panel title.
 5. Repeat for multiple panels (failed logins, top hosts, CPU/memory from metric logs).
 
-**Tip:** keep dashboards focused: Overview, Authentication, Host Health, and Security Events.
+
 
 ---
 
@@ -348,50 +347,6 @@ Use these as starting panels.
 
 ---
 
-## 14) Recommended GitHub repo structure (commit these)
 
-```
-splunk-siem/
-├─ README.md
-├─ server-setup/
-│  └─ splunk-install-notes.md
-├─ agents/
-│  ├─ ubuntu/
-│  │  ├─ outputs.conf
-│  │  └─ inputs.conf
-│  └─ windows/
-│     └─ inputs.conf
-├─ dashboards/
-│  └─ auth-overview.xml/json
-├─ alerts/
-│  └─ failed-logins.alert.md
-├─ reports/
-│  └─ daily-security-report.md
-├─ scripts/
-│  └─ archive-index.sh
-└─ docs/
-   └─ images/
-       └─ dashboard-screenshot.png
-```
 
-* Save config samples, exported dashboard XML/JSON, alert definitions and screenshots so the repo is reproducible.
-
----
-
-## 15) Next steps & hardening (optional)
-
-* Use TLS between forwarders and indexer (configure certs in `outputs.conf`).
-* Use dedicated indexes for Windows/Linux and RBAC in Splunk.
-* Centralize configuration management (deploy apps via Deployment Server or outputs.conf management).
-* Consider Splunk Enterprise Security (if licensed) for correlation searches and notable events.
-
----
-
-If you want, I can now:
-
-* generate ready-to-paste **`inputs.conf` / `outputs.conf`** files with your IP and index names,
-* produce the **README** including the commands above formatted for your repo, or
-* create the **folder tree** as files to download.
-
-Which of those would you like next?
 
